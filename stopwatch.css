@@ -1,0 +1,80 @@
+body{
+    background: skyblue;
+
+}
+#body{
+    margin: 0;
+    padding: 0;
+    font-size: tahoma;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: tahoma;
+   
+
+}
+#watch-1,#watch-2,#watch-3,#watch-4,#watch-5
+{
+
+width: 20vh;
+height: 20vh;
+box-shadow:0px 0px 32px rgba(0, 211, 53, 0.467),
+           0px 0px 32px rgba(0, 192, 35, 0.467),
+           0px 0px 32px rgba(0, 191, 102, 0.467);
+border-radius: 12px;
+display: flex;
+font-size: 85px;
+align-items: center;
+justify-content: center;
+color: rgb(4, 3, 3);
+margin: 6vh;
+
+}
+#watch-1{
+    width: 44vh
+}
+
+/* @keyframes animate {
+    from{
+        background: rgba(18, 7, 7, 0.483)
+    }
+    to{
+        background: rgb(126, 93, 93)
+    }
+} */
+
+
+
+#textbox{
+    width: 200vh;
+height: 20vh;
+display: flex;
+justify-content: space-between;
+justify-content: center;
+align-items: center;
+margin-top: -69px;
+margin-left: 2em;
+box-shadow:0px 0px 32px rgba(0, 211, 53, 0.467),
+           0px 0px 32px rgba(0, 192, 35, 0.467),
+           0px 0px 32px rgba(0, 191, 102, 0.467);
+}
+#watch-6,
+#watch-7,
+#watch-8,
+#watch-10,
+#watch-9{
+  
+    width: 30vh;
+    height: 10vh;
+
+margin-left: 10px;
+display: flex;
+font-size: 38px;
+align-items: center;
+justify-content: center;
+color: rgb(2, 3, 4);
+}
+#watch-6{
+    width: 44vh
+
+}
