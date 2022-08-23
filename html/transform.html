@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name</title>
+    <style>
+       
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+div {
+  transform: scale(0.75) rotateY(-30deg) rotateX(45deg) translateZ(4.5rem);
+  transform-origin: 50% 100%;
+  transform-style: preserve-3d;
+  box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.25);
+  transition: 0.6s ease transform;
+  width:50vh;
+height:50vh;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 2em;
+font-size: poppins medium;
+background: tomato;
+
+}
+div:hover {
+  transform: scale(1);
+
+}
+div::before {
+  transform: translateZ(4rem);
+}
+div::before:hover {
+  transform: translateZ(0);
+}
+div::after {
+  transform: translateZ(-4rem);
+
+}
+div::after:hover {
+  transform: translateZ(-1px);
+}/*# sourceMappingURL=index.css.map */
+    </style>
+</head>
+<body>
+
+<div class="box">Hover  Good</div>
+<div class="box">Hover Excellent </div>
+<div class="box">Hover  Perfect</div>
+<div class="box">Hover  Incredible</div>
+
+</body>
+</html>
