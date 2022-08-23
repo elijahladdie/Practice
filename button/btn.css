@@ -1,0 +1,49 @@
+body{
+    margin-top: 40vh;
+    position: block;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+   
+    background: hsl(323, 21%, 16%);
+
+}
+a{
+  border: 4 px solid hsl(317, 100%, 54%);
+  border-radius: 15px;
+  font-size: 60pt;
+  padding: 0.3px  30px;
+  text-decoration: none;
+  font-family: tahoma;
+   color: hsl(317, 100%, 54%);
+   text-shadow: 0 0 0.5vh hsl(317, 100%, 54%),
+                0 0 3.5vh hsl(317, 100%, 54%),
+                0 0 6.5vh hsl(317, 100%, 54%);
+    box-shadow: inset 0 0 0.5vh hsl(317, 100%, 54%),
+                 0 0 2.5vh hsl(317, 100%, 54%);
+   cursor: pointer;
+  
+
+}
+.btn::before{
+    content: '';
+    position: absolute;
+    background: hsl(317, 100%, 54%);
+    width: 39vh;
+    height: 100px;
+    top: 70%;
+    left: 85vh;
+    transform: perspective(1em) rotateX(45deg) scale(1,0.35);
+    filter: blur(2rem);
+    opacity: 0.7;
+}
+.btn:hover{
+    background-color:hsl(317, 100%, 54%);
+    color:hsl(323, 21%, 16%);
+    text-shadow: 0 0 0.5vh hsl(323, 21%, 16%),
+                0 0 3.5vh hsl(323, 21%, 16%),
+                0 0 6.5vh hsl(323, 21%, 16%);
+                box-shadow:none;
+                 border: 4px solid hsl(323, 21%, 16%);
+}
