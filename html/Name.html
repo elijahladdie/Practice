@@ -24,7 +24,7 @@
       margin: 0;
       padding: 0;
       color: white;
-      font-size: 16em;
+      font-size: 12em;
     }
     h1 span {
       display: table-cell;
@@ -32,6 +32,7 @@
       padding: 0;
       animation: animate 0.0987s linear infinite;
     }
+  
     h1 span:nth-child(1) {
       animation-delay: 0.5s;
     }
@@ -50,6 +51,18 @@
     h1 span:nth-child(6) {
       animation-delay: 3s;
     }
+    h1 span:nth-child(7) {
+      animation-delay: 3.5s;
+    }
+    h1 span:nth-child(8) {
+      animation-delay: 4s;
+    }
+    h1 span:nth-child(9) {
+      animation-delay: 4.5s;
+    }
+    h1 span:nth-child(10) {
+      animation-delay: 5s;
+    }
     @keyframes animate {
       0%,
       100% {
@@ -59,15 +72,29 @@
           0px 0px 30px #00b3ff, 0px 0px 40px #00b3ff, 0px 0px 50px #00b3ff,
           0px 0px 60px #00b3ff;
 
-        box-shadow: 0px 0px 10px #00b3ff, 0px 0px 20px #00b3ff,
-          0px 0px 30px #00b3ff, 0px 0px 40px #00b3ff, 0px 0px 50px #00b3ff,
-          0px 0px 60px #00b3ff;
       }
       5%,
       95% {
         color: rgb(255, 255, 255);
         filter: blur(0px);
       }
+    }
+    @keyframes fly {
+      from{
+        width: 0;
+      }
+      to{
+        width: 97vw;
+      }
+        
+    }
+   .span{
+      position: absolute;
+      width:97%;
+      height:1vh;
+      background: #00b3ff;
+      animation:fly 5.9s ease-in-out;
+
     }
   </style>
   <body>
@@ -78,12 +105,12 @@
       <span>J</span>
       <span>A</span>
       <span>H</span>
-    </h1>
-    <h1>
+
       <span>S</span>
       <span>O</span>
       <span>F</span>
       <span>T</span>
+      <span class="span"></span>
     </h1>
   </body>
 </html>
