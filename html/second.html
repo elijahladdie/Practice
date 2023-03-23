@@ -3,6 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <title> Random background Generator</title>
   </head>
 <style>
 body{
@@ -25,13 +26,20 @@ button:hover{
   box-shadow: inset 200px 0px 20px rgb(255, 255, 255);
   color: black;
 }
+
+@media (max-width: 600px) {
+  button{
+    height: 10vh;
+    width: 25vh;
+  }
+  
+}
 </style>
   <body>
     <button id="btn">Change Color</button>
 
     <script>
         let btn = document.getElementById('btn');
-let color = ["blue","Tomato","Red","Blue","Darkgrey","green"];
 const random = () =>{ 
   const randomColor =  Math.floor(Math.random()*16777215).toString(16);
   document.body.style.backgroundColor ="#"+ randomColor;

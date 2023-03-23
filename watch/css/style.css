@@ -84,3 +84,9 @@ span{
     font-size:1em;
     transform: translateX(-20deg);
 }
+@media (max-width: 600px) {
+    #time{
+        flex-direction: column;
+    }
+    
+}

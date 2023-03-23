@@ -26,9 +26,9 @@ setInterval(()=>{
     m = (m<10) ? "0" + m : m;
     s = (s<10) ? "0" + s : s;
     
-    hour.innerHTML = h+ "<br><span>Hours</span>";
-    minute.innerHTML = m+ "<br><span>Minutes</span>";
-    second.innerHTML = s+ "<br><span>Seconds</span>";
+    hour.innerHTML = h;
+    minute.innerHTML = m;
+    second.innerHTML = s;
     ap.innerHTML = am;
 
     // 12 clock 

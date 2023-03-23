@@ -6,16 +6,22 @@
 }
 .bg-1{
     background-image: url(../img/house\ \(12\).jpg);
+    background-position: 50% center ;
+
     background-size: cover;
     height: 100vh;
 }
 .bg-2{
-    background-image: url(../img/car\ \(5\).jpg);
+    background-image: url(../img/car5.jpg);
+    background-position: 50% center ;
+
     background-size: cover;
     height: 100vh;
 }
 .bg-3{
-    background-image: url(../img/kids\ \(2\).jpg);
+    background-image: url(../img/kids2.jpg)  ;
+    background-position: 50% center ;
+    object-fit: fill;
     background-size: cover;
    
     height: 100vh;
