@@ -1,52 +1,170 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title> Random background Generator</title>
-  </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <title> Random background Generator</title>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+</head>
 <style>
-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 97vh;
-
-}
-button{
-  border:hidden;
-  padding: 20px 40px;
-  background: #272727;
-  color:white;
-  transition: .3s;
-  font-size: 1em;
-}
-
-button:hover{
-  box-shadow: inset 200px 0px 20px rgb(255, 255, 255);
-  color: black;
-}
-
-@media (max-width: 600px) {
-  button{
-    height: 10vh;
-    width: 25vh;
+  * {
+    font-family: 'poppins';
+    margin: 0;
+    padding: 0;
   }
-  
-}
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    overflow-x: scroll;
+    padding: 0px 5%;
+
+  }
+
+
+  button {
+    border: hidden;
+    padding: 20px 40px;
+    background: #272727;
+    color: white;
+    transition: .3s;
+    font-size: .8em;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+  }
+
+  button:hover {
+    box-shadow: inset 200px 0px 20px rgb(255, 255, 255);
+    color: black;
+  }
+
+  @media (max-width: 600px) {
+    button {
+      position: absolute;
+      top: 0;
+      height: 10vh;
+      width: 25vh;
+      padding: 0;
+
+    }
+
+  }
+
+  .colors {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    top: 0;
+    left: 0;
+
+  }
+
+  .colors>span {
+    margin: 5px;
+    background: #272727;
+    color: white;
+    font-weight: 9000;
+    height: 20px;
+    width: 80px;
+    padding: .5em .4em;
+    border-bottom-style: groove;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .colors>span:hover:after {
+    width: auto;
+    transform: translateX(0);
+  }
+  .colors>span:after {
+    content: 'copy color';
+    position: absolute;
+    display: block;
+    top:0;
+    background: black;
+    left:0;
+    text-align: center;
+    padding: .5em .4em;
+    overflow: hidden;
+    transition: .33s  ease-in-out;
+    transform: translateX(-100px);
+
+  }
 </style>
-  <body>
-    <button id="btn">Change Color</button>
 
-    <script>
-        let btn = document.getElementById('btn');
-const random = () =>{ 
-  const randomColor =  Math.floor(Math.random()*16777215).toString(16);
-  document.body.style.backgroundColor ="#"+ randomColor;
-}
+<body>
+  <div class="colors">
 
-  btn.addEventListener('click', random)
-  random();
-    </script>
-  </body>
+  </div>
+  <button id="btn">Randomize</button>
+
+  <script>
+    let classdiv = document.querySelector(".colors")
+    let randomColor = ''
+    let btn = document.getElementById('btn');
+    let count = 0;
+    const random = () => {
+      // if (count !== 120) {
+      for (let i = 0; i < 110; i++) {
+
+        const span = document.createElement("span");
+
+        randomColor = Math.floor(Math.random() * 16777215).toString(16);
+        document.body.style.backgroundColor = "#" + randomColor;
+
+        console.log("#" + randomColor)
+
+        span.append("#" + randomColor);
+        span.style.backgroundColor = "#" + randomColor;
+
+        classdiv.appendChild(span);
+      }
+
+
+   
+    }
+
+    window.addEventListener('DOMContentLoaded', (event) => {
+      [...document.querySelectorAll('span')].forEach(el => el.addEventListener("click", () => {
+        const bgColor = el.style.backgroundColor;
+        function rgbToHex(rgb) {
+          // Extract the numeric values for red, green, and blue
+          let match = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+
+          if (!match) {
+            // Invalid input format
+            console.error('Invalid RGB format. Please use the format rgb(r, g, b).');
+            return null;
+          }
+
+          // Convert the numeric values to hexadecimal
+          let hex = '#' +
+            ('0' + parseInt(match[1], 10).toString(16)).slice(-2) +
+            ('0' + parseInt(match[2], 10).toString(16)).slice(-2) +
+            ('0' + parseInt(match[3], 10).toString(16)).slice(-2);
+
+          return hex;
+        }
+
+        // Example usage
+        let hexColor = rgbToHex(bgColor);
+
+        document.body.style.backgroundColor = hexColor;
+
+        navigator.clipboard.writeText(hexColor);
+
+      }))
+    })
+    btn.addEventListener('click', () => {
+      location.reload()
+    })
+    random();
+  </script>
+</body>
+
 </html>
